@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>swich</title>
+	<style type="text/css">
+		#u{background: url('univers.gif'); opacity: 0; width: 100% ; height: 100%; z-index: -9999; display: block; position: absolute; margin:0;}
+		#wave{position: absolute; width:100%; height: 100%; background: url('wave.gif'); display: block; opacity: 1;}
+		#back{position: absolute; margin-top: 10px; margin-left: 30%; width:600px; height:530px; background-size: 100% auto; }
+		#se{position: absolute; margin-top: 25%; margin-left: 40%; width:150px; height:150px; background: url('sheep.gif'); background-size: 100% auto; cursor:pointer; opacity: 1;}
+		#g{position: absolute; margin-top: 35%; margin-left: 34%; width:170px; height:170px; background: url('girl.gif'); background-size: 100% auto; opacity: 1;}
+		body{background:#0464b5;  }
+		
+	</style>
+</head>
+<body>
+	<div id="u"> </div>
+	<div id="wave"></div>
+	<div id="back">
+		<img src="boy.png">	</div>
+	<div id="se"></div>
+	<div id="g"></div>
+	<div id="w">
+		<img src="women.gif" style="position: absolute;margin-top: 10%; margin-left: 10%; width:200px; height:200px; opacity: 1;">
+	</div>
+
+	<script type="text/javascript">
+		var t = document.getElementById("se");
+		var on = false;
+		t.onclick = function(){
+			if(on){
+				on = true;
+				back.style.background = "url('boy.png') no-repeat ";  
+				wave.style.opacity = "1";
+				g.style.opacity = "1";
+				se.style.opacity = "1";
+				u.style.opacity = "0";
+				w.style.opacity = "1";
+				on = false;
+				switchSound.currentTime = 0;
+				switchSound.play();
+				document.body.style.background = "black";
+			
+				backgroundMusic.pause();
+				se.style.opacity = "1";
+
+
+
+			}else{
+				back.style.background = "url('boy.png') no-repeat";
+				back.style.backgroundSize = "width:1000px height:1000";
+				wave.style.opacity = "0";
+				g.style.opacity = "0";
+				se.style.opacity = "1";
+				u.style.opacity = "1";
+				w.style.opacity = "0";
+
+				on = true;
+				
+				switchSound.currentTime = 0;
+				switchSound.play();
+				document.body.style.background = "white";
+				
+				backgroundMusic.currentTime = 0;
+				backgroundMusic.play();
+			}
+		}
+	</script>
+</body>
+</html>
